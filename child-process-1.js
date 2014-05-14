@@ -20,13 +20,13 @@ find.stdout.on('data', function(data) {
 
 
 //run grep and output results
-grep.stdout.on('data', function(data) {
-	console.log('in grep.stdout.on ...');
-	
-	console.log(data);
-	
-});
-
+//grep.stdout.on('data', function(data) {
+//	console.log('in grep.stdout.on ...');
+//	
+//	console.log(data);
+//	
+//});
+//
 
 //error handling for grep/find
 find.stderr.on('data', function(data) {
