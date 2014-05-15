@@ -1,0 +1,5 @@
+[90mGET /example2.html [33m404 [90m5ms[0m
+[90mGET /example2.html [32m200 [90m6ms - 293b[0m
+[90mGET /BigBuckBunny_640x360.m4v [36m304 [90m2ms[0m
+[90mGET /BigBuckBunny_640x360.m4v [32m206 [90m6356ms - 81.05mb[0m
+[90mGET /BigBuckBunny_640x360.m4v [36m304 [90m0ms[0m

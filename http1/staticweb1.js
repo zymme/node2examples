@@ -5,6 +5,7 @@
 var http = require('http');
 var path = require('path');
 var fs = require('fs');
+var mime = require('mime');
 var base = "./home/examples/public_html";
 
 http.createServer(function(req, res) {
@@ -12,19 +13,23 @@ http.createServer(function(req, res) {
 	pathname = base + req.url;
 	console.log(pathname);
 	
-	fs.exists(pathname, function(exists) {
+	fs.stat(pathname, function(err, stats) {
 		
-		if(!exists) {
+		if(err) {
 			
-			console.log(pathname + 'path does not exist!');
+			console.log(pathname + ' path does not exist!');
 			res.writeHead(404);
 			res.write("Bad request 404\n");
 			res.end();
 		
 		}
-		else {
+		else if(stats.isFile()) {
 		
-			console.log(pathname + 'path does exist!!');
+			console.log(pathname + ' path does exist!!');
+			
+			var type = mime.lookup(pathname);
+			console.log('type: ' + type);
+			
 			res.setHeader('content-type', 'text/html');
 			
 			//200 status - found, no errors
@@ -44,6 +49,11 @@ http.createServer(function(req, res) {
 				console.log(err); 	
 				
 			});
+		}
+		else {
+			res.writeHead(403);
+			res.write('Directory access is forbidden');
+			res.end();
 		}
 		
 	});
