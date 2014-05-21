@@ -13,27 +13,7 @@ router.post('/weights-mongo/add', function(req, res, next) {
 	console.log('entered adding weight to mongo for user ' + req.session.username);
 	console.log('adding ' + req.body.weight + ' as the recording for the day ' + req.body.day);
 	
-	var weight = {
-			sn : req.body.weightsn,
-			name : req.session.username,
-			weight : req.body.weight,
-			day : req.body.day
-	};
-	
-	var weightObj = new Weight(weight);
-	
-	
-	weightObj.save(function(err, data) {
-		
-		if(err) {
-			res.send(err);
-		}
-		else {
-			console.log(data);
-			res.render('displayweightmongo', {title : 'Weight added', weight : weight, username : req.session.username });
-		}
-		
-	});
+	weightController.save(req, res, next);
 	
 });
 
