@@ -3,7 +3,7 @@ extends layout
 block content
   p Welcome to recording your weight web app! #{username}
   
-  form(name='weightAddform', action='/weights/add', method='post')
+  form(name='weightAddform', action='/weights-mongo/add', method='post')
    table
     tr
      td='Username:'
@@ -26,3 +26,6 @@ block content
       input(type='submit', value='submit', name='submit', id='submit')
      td
       input(type='reset', value='reset', name='reset', id='reset')
+    tr
+     td
+      a(href='/weights-mongo') Current List

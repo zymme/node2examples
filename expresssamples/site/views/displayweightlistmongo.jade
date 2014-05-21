@@ -1,0 +1,29 @@
+extends layout
+
+block content
+ table
+  caption Weight Information
+   if weights.length
+    tr
+     th SN
+     th Name
+     th Weight
+     th Day
+     th
+     th
+    each weight in weights
+     tr
+      td #{weight.sn}
+      td #{weight.name}
+      td #{weight.weight}
+      td #{weight.day}
+      td
+       a(href='/weights-mongo/#{weight.id}/delete') Delete
+      td
+       a(href='/weights-mongo/#{weight.id}/edit') Edit
+ br
+ table
+  tr
+   td
+    a(href='/weights-mongo/add/amount') Add Amount
+   

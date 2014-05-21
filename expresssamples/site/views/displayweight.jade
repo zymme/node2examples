@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  p Weight recently added for #{username}
+  
+  form(name='displayWeight', action='/weights/add/amount', method='get')
+   table
+    tr
+     td='Username:'
+     td
+      b #{username}
+    tr
+     td='Weight:'
+     td
+      b #{weight}
+    tr
+     td='Day:'
+     td
+      b #{day}
+    tr
+     td
+      input(type='submit', value='Record Weight', name='recordweight', id='recordweight')
+     td
+      
