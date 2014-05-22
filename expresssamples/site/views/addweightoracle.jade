@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  p Welcome to recording your weight web app! #{username}
+  
+  form(name='weightAddform', action='/weights-oracle/add', method='post')
+   table
+    tr
+     td='Username:'
+     td
+      b #{username}
+    tr
+     td='Weight SN:'
+     td
+      input(type='text', name='weightsn', id='weightsn', size='25')
+    tr
+     td='Weight:'
+     td
+      input(type='text', name='weight', id='weight', size='25')
+    tr
+     td='Day:'
+     td
+      input(type='text', name='day', id='day', size='25')
+    tr
+     td
+      input(type='submit', value='submit', name='submit', id='submit')
+     td
+      input(type='reset', value='reset', name='reset', id='reset')
+    tr
+     td
+      a(href='/weights-oracle') Current List

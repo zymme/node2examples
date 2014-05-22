@@ -21,6 +21,8 @@ var weighttestroute = require('./routes/weighttest');
 //add mongo dependencies
 var weightmongo = require('./routes/weight-mongo');
 
+var weightoracle = require('./routes/weight-oracle');
+
 var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://127.0.0.1/WeightDB');
@@ -57,6 +59,7 @@ app.use('/', resetroute);
 app.use('/', setupdeleteroute);
 
 app.use('/', weightmongo);
+app.use('/', weightoracle);
 
 //app.use('/', weighttestroute);
 

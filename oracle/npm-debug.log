@@ -1,0 +1,155 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'oracle-orm' ]
+2 info using npm@1.4.3
+3 info using node@v0.10.26
+4 warn package.json inputcheck@0.0.1 No repository field.
+5 warn package.json inputcheck@0.0.1 No README data
+6 verbose cache add [ 'oracle-orm', null ]
+7 verbose cache add name=undefined spec="oracle-orm" args=["oracle-orm",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: 'oracle-orm',
+8 verbose parsed url   path: 'oracle-orm',
+8 verbose parsed url   href: 'oracle-orm' }
+9 silly lockFile c63fd8c1-oracle-orm oracle-orm
+10 verbose lock oracle-orm /Users/zimmerd/.npm/c63fd8c1-oracle-orm.lock
+11 silly lockFile c63fd8c1-oracle-orm oracle-orm
+12 silly lockFile c63fd8c1-oracle-orm oracle-orm
+13 verbose addNamed [ 'oracle-orm', '' ]
+14 verbose addNamed [ null, '*' ]
+15 silly lockFile 1c828a21-oracle-orm oracle-orm@
+16 verbose lock oracle-orm@ /Users/zimmerd/.npm/1c828a21-oracle-orm.lock
+17 silly addNameRange { name: 'oracle-orm', range: '*', hasData: false }
+18 verbose url raw oracle-orm
+19 verbose url resolving [ 'https://registry.npmjs.org/', './oracle-orm' ]
+20 verbose url resolved https://registry.npmjs.org/oracle-orm
+21 info trying registry request attempt 1 at 07:59:55
+22 verbose etag "57939TCZTSRIGAM4M7FSVRD4W"
+23 http GET https://registry.npmjs.org/oracle-orm
+24 http 304 https://registry.npmjs.org/oracle-orm
+25 silly registry.get cb [ 304,
+25 silly registry.get   { date: 'Thu, 22 May 2014 13:59:56 GMT',
+25 silly registry.get     server: 'Apache',
+25 silly registry.get     via: '1.1 varnish',
+25 silly registry.get     'last-modified': 'Thu, 22 May 2014 13:59:56 GMT',
+25 silly registry.get     'cache-control': 'max-age=1',
+25 silly registry.get     etag: '"57939TCZTSRIGAM4M7FSVRD4W"',
+25 silly registry.get     'x-served-by': 'cache-d64-DAL',
+25 silly registry.get     'x-cache': 'MISS',
+25 silly registry.get     'x-cache-hits': '0',
+25 silly registry.get     'x-timer': 'S1400767196.933663607,VS0,VE41',
+25 silly registry.get     vary: 'Accept',
+25 silly registry.get     'content-length': '0',
+25 silly registry.get     'keep-alive': 'timeout=10, max=50',
+25 silly registry.get     connection: 'Keep-Alive' } ]
+26 verbose etag oracle-orm from cache
+27 silly addNameRange number 2 { name: 'oracle-orm', range: '*', hasData: true }
+28 silly addNameRange versions [ 'oracle-orm',
+28 silly addNameRange   [ '0.0.1',
+28 silly addNameRange     '0.0.2',
+28 silly addNameRange     '0.0.3',
+28 silly addNameRange     '0.0.4',
+28 silly addNameRange     '0.0.5',
+28 silly addNameRange     '0.0.6',
+28 silly addNameRange     '0.1.0',
+28 silly addNameRange     '0.1.1',
+28 silly addNameRange     '0.1.2',
+28 silly addNameRange     '0.1.3',
+28 silly addNameRange     '0.1.4' ] ]
+29 verbose addNamed [ 'oracle-orm', '0.1.4' ]
+30 verbose addNamed [ '0.1.4', '0.1.4' ]
+31 silly lockFile cd46f012-oracle-orm-0-1-4 oracle-orm@0.1.4
+32 verbose lock oracle-orm@0.1.4 /Users/zimmerd/.npm/cd46f012-oracle-orm-0-1-4.lock
+33 silly lockFile cd46f012-oracle-orm-0-1-4 oracle-orm@0.1.4
+34 silly lockFile cd46f012-oracle-orm-0-1-4 oracle-orm@0.1.4
+35 silly lockFile 1c828a21-oracle-orm oracle-orm@
+36 silly lockFile 1c828a21-oracle-orm oracle-orm@
+37 silly resolved [ { name: 'oracle-orm',
+37 silly resolved     version: '0.1.4',
+37 silly resolved     description: 'An Oracle ORM that actually works',
+37 silly resolved     main: 'lib/index.js',
+37 silly resolved     scripts:
+37 silly resolved      { test: 'node lib/unittests.js',
+37 silly resolved        preinstall: './driver/reinstall.sh' },
+37 silly resolved     repository: { type: 'git', url: 'https://github.com/SGrondin/oracle-orm' },
+37 silly resolved     keywords: [ 'oracle', 'orm' ],
+37 silly resolved     author: { name: 'Simon Grondin' },
+37 silly resolved     license: 'MIT',
+37 silly resolved     bugs: { url: 'https://github.com/SGrondin/oracle-orm/issues' },
+37 silly resolved     devDependencies: { 'coffee-script': '1.7.x', streamline: '0.10.x', oracle: '*' },
+37 silly resolved     readme: 'oracle-orm\n==========\n\nBecause the other options are worse.\n\nThere\'s only one other ORM for Node.js that supports Oracle. It says a lot about the cultures of both Node and Oracle.\n\nThe other ORM has over a year of open issues on Github, it sometimes generates invalid Oracle SQL statements and does absurd things like creating a table `PEOPLE` for a model named `PERSON` (and `PEOPLES` for `PEOPLE`, ha). I don\'t like ORMs, I\'m forced to use one for a project. I don\'t want my tools to do unexpected things in the database and that other ORM is full of surprises.\n\nThis ORM only supports the features I need. It doesn\'t support connection pooling, error recovery and all sorts of basic things you\'d expect from an ORM. If you want those features added, open an issue or send a pull request.\n\nIt\'s not even SQL injection-safe, for the most part.\n\n\n# Install\n\nDon\'t install from npm yet!\n\nFirst, make sure libaio is installed: `sudo apt-get install libaio1` or `sudo yum install libaio`\n\nThen, go to the [Oracle driver page](http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html) and click on Linux x86-64.\n\nDownload `instantclient-basic-linux.x64-12.1.***.zip` and `instantclient-sdk-linux.x64-12.1.***.zip`.\n\nUnzip both into `YOUR_PROJECT/instantclient_12_1`. It won\'t work if the driver can\'t be found.\n\nFinally, `npm install oracle-orm` in your project\'s directory. The install scripts take care of everything.\n\n\n#### Run the tests\n\nPut the database credentials in `node_modules/oracle-orm/testDB.json` and run `npm test oracle-orm`.\n\n\n# Usage\n\n```javascript\nvar ORM = require("oracle-orm");\nvar oracleConnectData = {\n\tdriver: "oracle"\n\thostname: "hostname or IP"\n\tport: 1521\n\tdatabase: "database name (SID)"\n\tuser: "username"\n\tpassword: "password123"\n};\nvar debug = true;\n\nnew ORM(oracleConnectData, debug, function(err, orm){\n\torm.getModels(function(err, models){\n\t\t// do stuff with the models\n\t});\n});\n```\n\nDue to the very callback-heavy nature of SQL, it\'s recommended to use a tool to deal with that. Promises, Generators, Streamline, Q, Async, etc. are all good options.\n\n\n# Documentation\n\nOracle-ORM works by building one Model object per table in the database. Operations on that Model affect the whole table. Operations GET and ALL on a Model return new copies of Units. A Unit maps to a database row. There can be more than one Unit per row. Operations on a Unit only affect that row.\n\n## ORM\n\n#### Getting the Models\n```javascript\norm.getModels(function(err, models){\n\t//do something with the models\n});\n```\n\n#### Running arbitrary SQL\n```javascript\norm.execute(sql, paramsArray, function(err, results){ ... });\n```\n\n# Model\n\nIn these examples, USER is a Model.\n\nThe USER.columns object contains information about the field types.\n\n#### add\n```javascript\nUSER.add({"USER_ID":5, "NAME":"JOE SMITH"}, function(err, results){ ... });\n```\n\n#### get\n```javascript\n// USER_ID between 5 and 20\nUSER.get({"USER_ID":">5", "USER_ID":"<20"}, [], function(err, results){ ... });\n\n// All users, ordered by USER_ID ascending and NAME descending\nUSER.get({}, ["USER_ID ASC", "NAME DESC"], function(err, results){ ... });\n```\n\n#### all\n```javascript\n// Shortcut for .get({}, [], cb);\n// all() returns Units in a non-deterministic order\nUSER.all(function(err, results){ ... });\n```\n\n#### update\n```javascript\n// Apply change to the whole table\n// Change all "JOE SMITH" with USER_ID greater than 10 to "BOB SMITH"\nUSER.update({"NAME":"BOB SMITH"}, {"NAME":"=\'JOE SMITH\'", "USER_ID":">10"}, function(err, results){ ... });\n```\n\n#### del\n```javascript\n// Delete everything with a USER_ID smaller than 5\nUSER.del({"USER_ID":"<5"}, function(err, results){ ... });\n```\n\n#### count\n```javascript\nUSER.count(function(err, results){ ... });\n```\n\n#### empty\n```javascript\nUSER.empty(function(err, results){ ... });\n```\n\n\n# Unit\n\n#### data\nuser.data contains the fields and values of a Unit.\n\n#### isDirty\nReturns true if the object was modified\n\n#### save\nWrites the dirty (modified) fields to the database.\n\n#### sync\nRefreshes all fields with fresh values from the database.\n\n#### reset\nBrings all fields back to the state they were in when the Unit was created or after the last sync if sync was called at some point.\n\n### Examples\n\nIn these examples, user55 is a Unit. Suppose they are executed sequentially.\n\n```javascript\nuser55.isDirty(); // false\nuser55.data.NAME = "WILLIAM CAMPBELL";\nuser55.isDirty(); // true\nuser55.save(function(err, results){ ... });\nuser55.isDirty(); // false\nconsole.log(user55.data.NAME); // "WILLIAM CAMPBELL"\n\nuser55.data.NAME = "JAMES SMITH";\nuser55.isDirty(); // true\nconsole.log(user55.data.NAME); // "JAMES SMITH"\nuser55.sync(function(err, results){ ... });\nconsole.log(user55.data.NAME); // "WILLIAM CAMPBELL"\nuser55.isDirty(); // false\n\nuser55.data.NAME = "JAMES SMITH";\nuser55.isDirty(); // true\nconsole.log(user55.data.NAME); // "JAMES SMITH"\nuser55.reset(function(err, results){ ... });\nconsole.log(user55.data.NAME); // "WILLIAM CAMPBELL"\nuser55.isDirty(); // false\n\n\nuser55.del(function(err, results){ ... }); // Deleted from the database\nuser55.del(function(err, results){ ... }); // Uncaught Exception: \'Unit USER was deleted and doesn\'t exist anymore\'\n```\n',
+37 silly resolved     readmeFilename: 'README.md',
+37 silly resolved     homepage: 'https://github.com/SGrondin/oracle-orm',
+37 silly resolved     _id: 'oracle-orm@0.1.4',
+37 silly resolved     _from: 'oracle-orm@' } ]
+38 info install oracle-orm@0.1.4 into /Users/zimmerd/Documents/workspace/oriellyzed
+39 info installOne oracle-orm@0.1.4
+40 info /Users/zimmerd/Documents/workspace/oriellyzed/node_modules/oracle-orm unbuild
+41 verbose tar unpack /Users/zimmerd/.npm/oracle-orm/0.1.4/package.tgz
+42 silly lockFile 850367a4-iellyzed-node-modules-oracle-orm tar:///Users/zimmerd/Documents/workspace/oriellyzed/node_modules/oracle-orm
+43 verbose lock tar:///Users/zimmerd/Documents/workspace/oriellyzed/node_modules/oracle-orm /Users/zimmerd/.npm/850367a4-iellyzed-node-modules-oracle-orm.lock
+44 silly lockFile 8899f8d4-npm-oracle-orm-0-1-4-package-tgz tar:///Users/zimmerd/.npm/oracle-orm/0.1.4/package.tgz
+45 verbose lock tar:///Users/zimmerd/.npm/oracle-orm/0.1.4/package.tgz /Users/zimmerd/.npm/8899f8d4-npm-oracle-orm-0-1-4-package-tgz.lock
+46 silly gunzTarPerm modes [ '755', '644' ]
+47 silly gunzTarPerm extractEntry package.json
+48 silly gunzTarPerm extractEntry .npmignore
+49 silly gunzTarPerm extractEntry README.md
+50 silly gunzTarPerm extractEntry LICENSE
+51 silly gunzTarPerm extractEntry driver/exports.sh
+52 silly gunzTarPerm extractEntry driver/reinstall.sh
+53 silly gunzTarPerm extractEntry lib/Column.js
+54 silly gunzTarPerm extractEntry lib/ORM.js
+55 silly gunzTarPerm extractEntry lib/Query.js
+56 silly gunzTarPerm extractEntry lib/Row.js
+57 silly gunzTarPerm extractEntry lib/Table.js
+58 silly gunzTarPerm extractEntry lib/helpers.js
+59 silly gunzTarPerm extractEntry lib/index.js
+60 silly gunzTarPerm extractEntry lib/types.js
+61 silly gunzTarPerm extractEntry lib/unittests.js
+62 silly gunzTarPerm extractEntry recompile.sh
+63 silly gunzTarPerm extractEntry src/Column.coffee
+64 silly gunzTarPerm extractEntry src/ORM._coffee
+65 silly gunzTarPerm extractEntry src/Query._coffee
+66 silly gunzTarPerm extractEntry src/Row._coffee
+67 silly gunzTarPerm extractEntry src/Table._coffee
+68 silly gunzTarPerm extractEntry src/helpers.coffee
+69 silly gunzTarPerm extractEntry src/index.coffee
+70 silly gunzTarPerm extractEntry src/types.coffee
+71 silly gunzTarPerm extractEntry src/unittests._coffee
+72 silly gunzTarPerm extractEntry testDB.json
+73 silly lockFile 850367a4-iellyzed-node-modules-oracle-orm tar:///Users/zimmerd/Documents/workspace/oriellyzed/node_modules/oracle-orm
+74 silly lockFile 850367a4-iellyzed-node-modules-oracle-orm tar:///Users/zimmerd/Documents/workspace/oriellyzed/node_modules/oracle-orm
+75 silly lockFile 8899f8d4-npm-oracle-orm-0-1-4-package-tgz tar:///Users/zimmerd/.npm/oracle-orm/0.1.4/package.tgz
+76 silly lockFile 8899f8d4-npm-oracle-orm-0-1-4-package-tgz tar:///Users/zimmerd/.npm/oracle-orm/0.1.4/package.tgz
+77 info preinstall oracle-orm@0.1.4
+78 verbose unsafe-perm in lifecycle true
+79 info oracle-orm@0.1.4 Failed to exec preinstall script
+80 info /Users/zimmerd/Documents/workspace/oriellyzed/node_modules/oracle-orm unbuild
+81 info preuninstall oracle-orm@0.1.4
+82 info uninstall oracle-orm@0.1.4
+83 verbose true,/Users/zimmerd/Documents/workspace/oriellyzed/node_modules,/Users/zimmerd/Documents/workspace/oriellyzed/node_modules unbuild oracle-orm@0.1.4
+84 info postuninstall oracle-orm@0.1.4
+85 error oracle-orm@0.1.4 preinstall: `./driver/reinstall.sh`
+85 error Exit status 1
+86 error Failed at the oracle-orm@0.1.4 preinstall script.
+86 error This is most likely a problem with the oracle-orm package,
+86 error not with npm itself.
+86 error Tell the author that this fails on your system:
+86 error     ./driver/reinstall.sh
+86 error You can get their info via:
+86 error     npm owner ls oracle-orm
+86 error There is likely additional logging output above.
+87 error System Darwin 13.1.0
+88 error command "node" "/usr/local/bin/npm" "install" "oracle-orm"
+89 error cwd /Users/zimmerd/Documents/workspace/oriellyzed/oracle
+90 error node -v v0.10.26
+91 error npm -v 1.4.3
+92 error code ELIFECYCLE
+93 verbose exit [ 1, true ]
